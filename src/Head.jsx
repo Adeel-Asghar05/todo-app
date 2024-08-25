@@ -19,8 +19,8 @@ let handledatechange=(event)=>{
 
 let onformsubmit=(event)=>{
   event.preventDefault();
-  console.log("on submit text", textinput)
-  console.log("on submit date", dateinput )
+  // console.log("on submit text", textinput)
+  // console.log("on submit date", dateinput )
   onsubmitData(textinput,dateinput);
 
 setDateinput("");
@@ -29,17 +29,18 @@ setTextinput("")
 
   return(
 <form action="" onSubmit={onformsubmit}   >
-    <div className="flex justify-around items-center border-b-2 p-1 rounded w-full mt-5  bg-gray-400">
+    <div className="flex justify-around items-center border-b-2 p-1 mt-5 rounded   bg-gray-400">
     {/* input text */}
+    {/* <div className="flex justify-around items-center border-b-2 p-1 mt-5 rounded w-full  bg-gray-300"> */}
         <input 
-        className="py-1 px-2 bg-gray-200 input placeholder-black border-none max-w-44 min-w-20 rounded-md outline-none" type="text" 
+        className="py-1 px-2 bg-gray-200 input placeholder-black border-none w-44  rounded-md outline-none" type="text" 
         placeholder="Enter Text Here..."
         value={textinput}
         onChange={handletextchange}
         />
         {/* input date */}
         <input 
-        className="p-1 bg-gray-200  px-3 border border-none rounded-md outline-none max-w-44 min-w-20" 
+        className="p-1 bg-gray-200  px-3 border border-none rounded-md outline-none w-44 " 
         type="date"
         value={dateinput}
         onChange={handledatechange}
