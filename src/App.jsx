@@ -25,7 +25,7 @@ function App() {
     let handledeletebtn=(textinput)=>{
       let newlist= data.filter(items =>items.name !== textinput);
       setdata(newlist);
-      console.log(`item deleted ${textinput}`);
+      // console.log(`item deleted ${textinput}`);
     }
 
   return (
