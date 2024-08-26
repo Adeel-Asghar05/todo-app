@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { IoMdAddCircle } from "react-icons/io";
+
 
 function Head({onsubmitData}){
 
@@ -36,6 +38,7 @@ setTextinput("")
         className="py-1 px-2 bg-gray-200 input placeholder-black border-none w-44  rounded-md outline-none" type="text" 
         placeholder="Enter Text Here..."
         value={textinput}
+        required
         onChange={handletextchange}
         />
         {/* input date */}
@@ -43,15 +46,16 @@ setTextinput("")
         className="p-1 bg-gray-200  px-3 border border-none rounded-md outline-none w-44 " 
         type="date"
         value={dateinput}
+        required
         onChange={handledatechange}
 
          />
         {/* submit button */}
         <button 
-        className="p-1 border-none bg-green-600 text-white rounded w-20 text-md" 
+        className="p-1 border-none bg-green-600 text-white rounded w-20 flex justify-center items-center"  
         // type="submit"
          >
-        Add
+        <IoMdAddCircle  className="text-2xl "/>
         </button>
       </div>
       </form>
