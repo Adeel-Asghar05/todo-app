@@ -3,8 +3,8 @@ import { createContext } from "react";
 export const todostore=createContext(
   {
     data: [],
-    addnewitem: ()=>{},
-    deleteitem: ()=>{}
+      addnewitem: ()=>{},
+        deleteitem: ()=>{}
 
   }
 );
