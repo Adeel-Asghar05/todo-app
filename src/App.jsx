@@ -3,17 +3,13 @@ import { useState } from "react";
 import Head from "./Head";
 import Mapitems from "./assets/Mapitems";
 import Wellcomemesage from "./Wellcomemesage";
+import { todostore } from "./store/todo-store";
 
 function App() {
 
-  let [data , setdata]=useState([
-  //   {
-  //   name:"buy milk",
-  //   date:"2024-05-17"
-  // }
-])
+  let [data , setdata]=useState([])
 
-    let handleformsubmit=(textinput,dateinput)=>{
+    let addnewitem=(textinput,dateinput)=>{
       // console.log("on submit text in app",textinput )
       // console.log("on submit date in app",dateinput)
       setdata([...data,{
@@ -22,23 +18,31 @@ function App() {
       }]);
     };
 
-    let handledeletebtn=(textinput)=>{
+    let deleteitem=(textinput)=>{
       let newlist= data.filter(items =>items.name !== textinput);
       setdata(newlist);
-      // console.log(`item deleted ${textinput}`);
+      console.log(`item deleted ${textinput}`);
+      console.log(1+1);
     }
 
+
   return (
-    <>
-     <div className="flex justify-center items-center">
-    <div className=" flex justify-around flex-col  w-1/2  ">
-        <Head onsubmitData={handleformsubmit} />
-        {data.length === 0 && <Wellcomemesage></Wellcomemesage>}
-        <Mapitems inputdata={data} ondeleteclick={handledeletebtn} />
-        </div>
-  </div>
-    </>
+    <todostore.Provider value={{
+      data,
+      addnewitem,
+      deleteitem,
+    }}>
+
+    <div className="flex justify-center items-center">
+     <div className=" flex justify-around flex-col  w-1/2  ">
+        <Head />
+        <Wellcomemesage></Wellcomemesage>
+        <Mapitems />
+      </div>
+    </div>
+  </todostore.Provider>
   )
+
 }
 
 export default App;

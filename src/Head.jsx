@@ -1,8 +1,13 @@
 import { useRef, useState } from "react";
 import { IoMdAddCircle } from "react-icons/io";
 
+import { todostore } from "./store/todo-store";
+import { useContext } from "react";
 
-function Head({onsubmitData}){
+function Head(){
+
+  const {addnewitem}=useContext(todostore);
+
 
 const todoname=useRef();
 const tododate=useRef();
@@ -17,7 +22,7 @@ let onformsubmit=(event)=>{
   todoname.current.value="";
   tododate.current.value="";
 
-  onsubmitData(textinput,dateinput);
+  addnewitem(textinput,dateinput);
 }
 
   return(

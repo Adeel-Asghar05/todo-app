@@ -1,16 +1,20 @@
+import { useContext } from "react";
 import Renderitems from "../Render-items";
+import { todostore } from "../store/todo-store";
 
-const Mapitems=({inputdata ,ondeleteclick})=>{
+
+
+
+const Mapitems=()=>{
+const {data}=useContext(todostore);
+
  return(
- <>
-   {inputdata.map ((inputdata,index)=>(
-    <Renderitems key={index}  todovalue={inputdata.name}  tododate={inputdata.date} ondeleteclick={ondeleteclick} />
-    
+  <>
+   {data.map ((data,index)=>(
+    <Renderitems key={index} todovalue={data.name}  tododate={data.date} />
 
   ))}
-
-
- </>
+  </>
  )
 };
 export default Mapitems;
