@@ -8,6 +8,8 @@ import { todostore } from "./store/todo-store";
 function App() {
 
   let [data , setdata]=useState([])
+  console.log(1+1);
+
 
     let addnewitem=(textinput,dateinput)=>{
       // console.log("on submit text in app",textinput )
@@ -21,8 +23,7 @@ function App() {
     let deleteitem=(textinput)=>{
       let newlist= data.filter(items =>items.name !== textinput);
       setdata(newlist);
-      console.log(`item deleted ${textinput}`);
-      console.log(1+1);
+      // console.log(`item deleted ${textinput}`);
     }
 
 
