@@ -5,12 +5,7 @@ import { useContext } from "react";
 
 
 function Renderitems( {todovalue,tododate}){
-
-  const {deleteitem}=useContext(todostore);
-  // const inputdata = storedata.data;
-  // const todovalue = inputdata.name;
-  // const tododate = inputdata.date;
-
+  const {deleteitem}=useContext(todostore)
 
   return(
     <div className="flex justify-around items-center border-b-2 p-1 mt-5  rounded w-full  bg-gray-300">
@@ -20,9 +15,9 @@ function Renderitems( {todovalue,tododate}){
       onClick={()=>deleteitem(todovalue)}>
       <MdDelete />
       </button>
-  </div>
+    </div>
 
-  );
-}
+  )
+};
 
 export default Renderitems;

@@ -3,8 +3,6 @@ import Renderitems from "../Render-items";
 import { todostore } from "../store/todo-store";
 
 
-
-
 const Mapitems=()=>{
 const {data}=useContext(todostore);
 

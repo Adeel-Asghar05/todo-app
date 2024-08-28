@@ -12,8 +12,6 @@ function App() {
 
 
     let addnewitem=(textinput,dateinput)=>{
-      // console.log("on submit text in app",textinput )
-      // console.log("on submit date in app",dateinput)
       setdata([...data,{
         name : textinput,
         date : dateinput
@@ -23,7 +21,6 @@ function App() {
     let deleteitem=(textinput)=>{
       let newlist= data.filter(items =>items.name !== textinput);
       setdata(newlist);
-      // console.log(`item deleted ${textinput}`);
     }
 
 
