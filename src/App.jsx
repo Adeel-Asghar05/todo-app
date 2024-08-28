@@ -35,7 +35,7 @@ function App() {
     }}>
 
     <div className="flex justify-center items-center">
-     <div className=" flex justify-around flex-col  w-1/2  ">
+      <div className=" flex justify-around flex-col  w-1/2  ">
         <Head />
         <Wellcomemesage></Wellcomemesage>
         <Mapitems />

@@ -42,11 +42,11 @@ let onformsubmit=(event)=>{
         ref={tododate}
         required
 
-         />
+        />
         {/* submit button */}
         <button 
         className="p-1 border-none bg-green-600 text-white rounded w-20 flex justify-center items-center"  
-         >
+        >
         <IoMdAddCircle  className="text-2xl "/>
         </button>
       </div>

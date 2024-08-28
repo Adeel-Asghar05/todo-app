@@ -8,13 +8,13 @@ import { todostore } from "../store/todo-store";
 const Mapitems=()=>{
 const {data}=useContext(todostore);
 
- return(
+return(
   <>
-   {data.map ((data,index)=>(
+  {data.map ((data,index)=>(
     <Renderitems key={index} todovalue={data.name}  tododate={data.date} />
 
   ))}
   </>
- )
+)
 };
 export default Mapitems;
